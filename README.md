@@ -302,12 +302,78 @@ Python 学习笔记
 练习： while循环打印九九乘法表 【[CODE](A-basic/Practical/Practical2.py)】
 
 #### 1.4.5 for循环的基本语法
+1. 基础语法
+格式：
+> 
+>   for 临时变量 in 待处理数据集：
+> 循环满足条件时执行的代码
+> 
+```python
+name = "amy"
+for x in name:
+  print(x)
+```
+- for 循环无法定义循环条件，理论上无法构建无限循环
+
+> 练习：【[CODE](A-basic/Practical/Practical3.py)】
+> 
+> 定义字符串变量name,内容为：'qazwsxedcvfredcxswqazaaassddfgrtvaadeada', for循环统计其中a的个数。
+
+2. range语句
+
+序列类型：内容可以一个个依次取出的一种类型。包括：
+- 字符串
+- 列表
+- 元组
+
+> 语法1：
+> 
+> range(num)
+> 
+> 例子： range(5)，取出数据是[0,1,2,3,4]
+
+> 语法2：
+> 
+> range(num1,num2) : 从num1开始，到num2结束的数字序列，不包含num2。
+> 
+> 例子：
+> 
+> range(5,10) 取出数据为：[5,6,7,8,9]
+> 
+
+> 语法3：
+> 
+> range(num1, num2,step):从num1开始，到num2结束的数字序列，不包含num2，数字之间的步长，以step为准
+> 
+> 例子：
+> 
+> range(5,10,2)取出数据为：[5,7,9]
+
+> 练习： 统计偶数个数 【[CODE](A-basic/Practical/Practical4.py)】
+> 
+> 使用range()语句，获取从1到num（num是任意数）的序列，统计偶数的个数
+
+3. 变量作用域
+
 
 #### 1.4.6 for循环的嵌套应用
+练习：【[CODE](A-basic/Practical/Practical5.py)】
+
+用for循环输出九九乘法表
 
 #### 1.4.7 循环中断：break和continue
+- break:直接结束循环
+- continue: 中断本次循环，进入下一次循环
 
 #### 1.4.8 综合案例
+练习：发奖金【[CODE](A-basic/Practical/Practical6.py)】
+
+某公司账户余额1万元，给20名员工发奖金。
+- 员工编号从1到20，每人1000
+- 绩效分1-10（随机生成），如低于5，无奖金
+- 如奖金发完，结束发奖金
+
+
 
 
 
