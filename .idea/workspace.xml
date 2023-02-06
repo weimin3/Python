@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ed23fda-7104-45af-8555-21c68eb2897d" name="Changes" comment="while">
-      <change afterPath="$PROJECT_DIR$/A-basic/Practical/Practical3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/A-basic/Practical/Practical4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/A-basic/Practical/Practical5.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/A-basic/Practical/Practical6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
@@ -208,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675258478073</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="while">
+      <created>1675375299199</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675375299200</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
