@@ -604,6 +604,46 @@ def func(x,y):
 - 定义一个空集合，通过for循环遍历列表，将元素添加到集合，将集合打印出来
 
 ####  1.6.5 字典
+* 定义：通过key检索到value,
+  - 字面量：{key:value, key:value,....}
+  - 变量： my_dict = {key:value, key:value,....}
+  - 空字典：my_dict = {} my_dict = dict()
+* 注意：
+  - key不可重复
+  - key和value可以是任意数据类型，即字典可以嵌套。key不可以是字典，但value可以是嵌套的字典
+  - 不支持while循环
+* 相关操作
+  - 取值：字典名称[key值]
+  - 取嵌套字典的信息：字典名称[key][key]
+  - 新增元素：字典[key]=value
+  - 更新元素：字典[key]=新的value
+  - 删除元素：字典.pop(key),获得指定key的value,同时指定key的数据被删除
+  - 清空字典：字典.clear()
+  - 获取全部key: 字典.keys(),得到字典中的全部key
+  - 遍历字典：
+    - 方式1：通过获取全部的key来完成遍历
+      - ```for key in my_dict.keys():
+               print(key)
+               print(my_dict[key])
+      - ```
+    - 方式2：直接对字典进行for循环，每一次循环都是直接得到key
+      - ```python
+        for key in my_dict:
+           print(key)
+           print(my_dict[key])
+      - ```
+  - 统计字典的元素数量：len(my_dict)
+* 练习：升职加薪 【[CODE](A-basic/Practical/Practical14.py)】
+  - 有如下员工信息，使用字典完成数据的记录。
+  - 并通过for循环对所有级别为1的员工上任1级，薪水增加1000元
+  - 
+| 姓名  | 部门  | 工资  | 级别  |
+|:---:|:----:|:-----:|:-----:|
+| 张三  |科技部 | 3000 |1 |
+| 李四  |市场部 | 5000 | 2 |
+| 王武  |市场部|7000 |3     |
+| 赵六  | 科技部|4000 |1   |
+| 钱七  | 市场部 | 6000 | 2  |
 
 ####  1.7 模块
 
