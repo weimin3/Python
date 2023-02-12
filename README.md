@@ -464,6 +464,50 @@ def func(x,y):
 
 您好！您取款40000元，卡上余额是：64000000元
 
+9. 函数进阶
+* 函数的多返回值
+  - 语法： 
+    - ```
+      def test_return():
+          return 1,2
+      x,y = test_return() 支持不同类型的数据return 
+    - ```
+* 函数的多种传参方式
+  - 位置参数：调用函数时根据函数定义的参数位置来传递参数
+  - 关键字参数：函数调用时通过"键 = 值"形式传递参数 ```def usr_info(name,age,gender)   usr_info(name = '张三'，age=20,gender='男')//可以不安顺序```
+  - 不定长参数：即可变参数，用于不确定调用的时候会传递多少个参数的场景，分为两种类型：
+    - 位置传递 ：args是元组类型
+      - ``` def usr_info(*args):
+                print(args)
+            
+            usr_info('TOM')--打印结果： （'TOM'，） 
+            usr_info('TOM'，18) --- 打印结果：('TOM'，18)
+        
+      - ```
+    - 关键字传递
+      - ```python
+        def usr_info(**kargs):
+            print(kargs)
+        usr_info(name='TOM',age=18,id=110) 打印值：{'name':'TOM','age':18,'id':110}
+
+      - ```
+  - 缺省参数：定义函数时，为参数提供默认值。 ```def usr_info(name,age,gender='男'）``` 注意：默认参数一定写在最后
+  * 匿名函数
+    - 函数作为参数传递,传入计算逻辑，而非传入数据：
+    ```python
+    def test_func(compute):
+         result = compute(1,2)
+         print(result)
+    def compute(x,y):
+        return x+y
+
+     ```
+    - lambda 匿名函数： lambda关键字可以定义匿名函数，只可临时使用一次
+      - 定义语法：lambda 传入参数：函数体（一行代码）
+      ```python
+        test_func(lambda x,y:x+y)
+      ```
+
 ### 1.6 数据容器
 
 - 定义：一种可以容纳多份数据的数据类型，容纳的每一份数据称之为1个元素。即，数据容器用于批量存储
@@ -644,8 +688,82 @@ def func(x,y):
 | 王武  |市场部|7000 |3     |
 | 赵六  | 科技部|4000 |1   |
 | 钱七  | 市场部 | 6000 | 2  |
+####  1.6.6 数据容器对比
+* 数据容器分类
+  - 是否支持下标索引：
+    - 是：列表，元组，字符串--序列类型
+    - 否：集合，字典 -- 非序列类型
+  - 是否支持重复元素：
+    - 是：列表，元组，字符串 -- 序列类型
+    - 否：集合，字典 -- 非序列类型
+  - 是否可以修改：
+    - 是：列表，集合，字典
+    - 否：元组，字符串
+* 数据容器的通用操作
+  - 遍历：都支持for循环，列表，元组，字符串支持while循环，集合，字典不支持
+  - 统计元素个数： len(容器)
+  - 统计容器中的最大元素：max(容器)
+  - 统计容器中的最小元素：min(容器)
+  - 转换
+    - list(容器)：将给定容器转换为列表； 
+    - str(容器)：给定容器转换为字符串 
+    - tuple(容器)：转换为元组 
+    - set(容器)：转换为集合
+  - 排序：sorted(容器，reverse = True)
+####  1.6.7 字符串大小比较
+依据ASCII码表，只要A字符串有一位比B字符串对应位大，A字符串就大
 
-####  1.7 模块
+####  1.7 文件操作
+1. 文件的编码
+文本内容通过编码技术(密码本)将内容翻译成0和1存入。常用utf-8
+2. 文件的读取
+   - 打开函数：open(name,mode,encoding) name:文件名；mode=r,w,a(追加) encoding:推荐utf-8 ```f= open(""D:/test.txt","r",encoding="UTF-8")```
+   - 读操作：
+     - read(): 文件对象.read(num), num表示从文件中读取的数据的长度，单位是字节
+     - readlines(): 按照行的方式把整个文件中的内容进行一次性读取，并且返回的是一个列表，其中每一行的数据为一个元素
+     - readline():一次读取一行内容
+     - for循环： 
+     - ```
+       for line in f:
+                    print(line)
+       ```
+   - 关闭文件：f.close()
+   - with open('python.txt','r') as f:
+         f.readlines()
+   // 说明： 通过在with open 的语句块中对文件进行操作，可以在操作完成后自动关闭文件，避免遗忘close方法
+练习：
+   - 将如下内容复制到文本编辑器中，保存为 word.txt. 文件存放为任意位置，通过文件读取操作，读取此文件，统计today出现的次数。
+   - today is Sunday
+   - Marry go to school for celebrating something
+   - she feel very good and very happy today
+   - today is also a special day
+   - because today is a sunny day
+```python
+   # 方式一
+   f = open("D:/word.txt","r", encoding = "UTF-8")
+   content = f.read()
+   count = content.count("today")
+   print(f"There are {count} 'today'")
+   f.close() 
+   # 方式二
+   f = open("D:/word.txt","r", encoding = "UTF-8")
+   count =0 
+   for line in f:
+     # 去除前后空格以及换行
+     line = line.strip()
+     words=line.split(" ")
+     for word in words:
+       if word == "today":
+         count +=1
+   print(f"There are {count} 'today'") 
+   f.close()
+```
+3. 文件的写出
+4. 文件的追加
+5. 综合案例
+
+
+####  1.8 模块
 
 
 
