@@ -758,9 +758,41 @@ def func(x,y):
    print(f"There are {count} 'today'") 
    f.close()
 ```
-3. 文件的写出
+3. 文件的写入
+- w模式，open可以创建不存在的文件
+- w模式，文件存在会清空原有内容
+- f = open("D:/word.txt","w", encoding = "UTF-8")
+- f.write("hello world")
+- 内容刷新 ```f.flush()``` f.close()内置flush功能
+
 4. 文件的追加
+- f = open("D:/word.txt","a", encoding = "UTF-8")
+- a模式。文件不存在会创建文件
+- a模式，文件存在会在最后追加写入文件
 5. 综合案例
+- 读取文件
+- 将文件写出到bill.txt.bak文件作为备份
+- 将文件内标记为测试的数据行丢失
+```python
+# 打开文件得到文件对象,准备读取
+fr = open("D:/bill.txt","r",encoding="UTF-8")
+# 打开文件得到文件对象，准备写入
+fw = open("D:/bill.txt.bak","w",encoding="UTF-8")
+# for循环读取文件
+for line in fr:
+  # 清理回车换行符
+  line = line.strip()
+  # 用逗号分割,取第四列
+  if line.split(",")[4] == "测试":
+     continue  #进入下一次循环
+  # 将内容写出
+  fw.write(line)
+    # 由于前面对内容进行了strip()的操作，所以要手动写出换行符
+  fw.write("\n")
+# close 2个文件对象
+fr.close()
+fw.close()
+```
 
 
 ####  1.8 模块
