@@ -793,10 +793,110 @@ for line in fr:
 fr.close()
 fw.close()
 ```
+####  1.8 异常
+1. 捕获异常的基本语法
+   - 注意：
+      - try 只放一行尝试执行的代码
+      - 如果尝试执行的代码的异常类型和要捕获的异常类型不一致，则无法捕获异常
+```python
+try:
+   可能发生错误的代码
+except：
+   如果出现异常执行的代码
 
+例子：尝试以'r'模式打开文件，如文件不存在，则以'w'方式打开
+try: 
+  f = open('linux.txt','r')
+except:
+  f = open('linux.txt','w')
+```
+2. 捕获多个异常
+当捕获多个异常时，可以把要捕获的异常类型的名字，放到except后，并使用元组的方式存储
+3. 捕获所有异常
+```python
+try:
+   f=open('D:/123.txt','r')
+except Exception as e:
+   print('出现异常了')
+```
+4. 异常else
+else表示的是如果没有异常要执行的代码。
+```python
+try:
+   print(1)
+except Exception as e:
+   print(e)
+else:
+   print('没有异常时执行的代码')
+```
+5. 异常的finally
+finally 表示的是无论是否异常都要执行的代码,例如关闭文件
+```python
+try:
+  f = open('test.txt','r')
+except Exception as e:
+  f = open('test.txt','w')
+else:
+  print('没有异常')
+finally:
+  f.close()
+```
+6. 异常的传递性：函数嵌套，当函数func01中发生异常且没有捕获处理这个异常的时候，异常会传递到func02，当func02没有捕获异常时，main函数会捕获这个异常
+####  1.9 模块
+* 模块的定义：module是一个python文件，以.py结尾，模块能定义函数，类和变量
+* 模块的作用：工具包
+1. 模块的导入
+> [from 模块名] import [模块｜类｜变量｜*] [as 别名]
+> import 模块名1，模块名2
+> from 模块名 import 功能名
+> from 模块名 import *: * 表示全部的意思
 
-####  1.8 模块
+2. 自定义模块
+* 步骤（例如）：新建一个python文件，命名为my_module.py，并定义test函数
+  - '--main--'变量功能：内部测试可用，但调用时不会被执行
+```python
+# 新建一个python文件，命名为my_module.py
+def test(a,b):
+    print(a + b)
+# '--main--'变量功能：内部测试可用，但调用时不会被执行
+if --name-- = '--main--':
+  test(1,2)
+# 调用自定义的模块
+import my_module
+my_module.test(1,2)
+```
+- '__all__'变量：如果一个模块文件中有该变量，当使用'from xxx import *'导入时，只能导入这个列表中的元素
+```python
+# 新建一个python文件，命名为my_module.py
+__all__ = ['test_A']
 
+def test_A():
+   print('test_A')
+   
+def test_B():
+  print('test_B')
+# 调用自定义的模块
+from my_model import *
+# 只能用testA，因为在all中
+test_A()
+```
+####  1.10 包
+1. 自定义包
+* 定义：从物理上讲，包就是一个文件夹，在该文件夹下包含一个__init__.py文件，该文件夹可用于包含多个模块文件
+* 作用：当模块文件越来越多时，包可以管理这些模块
+* 步骤：
+  - 新建包'my_package'
+  - 新建包内模块
+  - 模块内代码
+  - 即：[New] -> [Python Package]->输入包名-> ok
+2. 安装第三方包
+* 常用包：
+  - 科学计算：numpy
+  - 数据分析：pandas
+  - 大数据计算：pyspark,apache-flink
+  - 图形可视化：matplotlib, pyecharts
+  - 人工智能：tensorflow
+* 安装方法： pip install 包名称
 
 
 
