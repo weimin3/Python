@@ -897,7 +897,28 @@ test_A()
   - 图形可视化：matplotlib, pyecharts
   - 人工智能：tensorflow
 * 安装方法： pip install 包名称
+#### 1.11 自定义工具包 【[code](my_utils)】
+创建一个自定义包，名称为：my_utils
+在包内提供2个模块：
+- str_util.py（字符串相关工具，包含：）
+  - 函数：str_reverse（s）,接受传入字符串，将字符串反转返回
+  - 函数：substr（s,x,y）,按照下标x和y，对字符串进行切片
+- file_util.py(文件处理相关工具，包含：)
+  - 函数：print_file_info(file_name),接收传入文件的路径，打印文件的全部内容，如文件不存在则捕获异常，输出提示信息，通过finally关闭文件对象
+  - 函数：append_to_file(file_name,data),接收文件路径以及传入数据，将数据追加写入文件中
+构建出包后，尝试用编写的工具包
+  
+```python
+//导入工具并使用
+import my_utils.str_util
+from my_utils import file_util
+print(my_utils.str_util.str_reverse("今天天气好"))
+print(my_utils.str_util.substr("今天天气好",1,4))
 
+file_util.print_file_info("d:/test_append.txt")
+file_util.append_to_file("d:/test_append.txt","今天不下雨")
+
+```
 
 
 ## 2. 高阶加强
