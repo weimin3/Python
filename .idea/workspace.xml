@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ed23fda-7104-45af-8555-21c68eb2897d" name="Changes" comment="visial">
+    <list default="true" id="5ed23fda-7104-45af-8555-21c68eb2897d" name="Changes" comment="content">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,7 +188,7 @@
       <updated>1675031989684</updated>
       <workItem from="1679345244506" duration="1256000" />
       <workItem from="1679946254152" duration="9288000" />
-      <workItem from="1680111797439" duration="7819000" />
+      <workItem from="1680111797439" duration="8380000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <created>1675032587032</created>
@@ -329,7 +330,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680120567744</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="content">
+      <created>1680120693007</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1680120693007</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +361,8 @@
     <MESSAGE value="dictionary" />
     <MESSAGE value="util" />
     <MESSAGE value="visial" />
-    <option name="LAST_COMMIT_MESSAGE" value="visial" />
+    <MESSAGE value="content" />
+    <option name="LAST_COMMIT_MESSAGE" value="content" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Python$str_util.coverage" NAME="str_util Coverage Results" MODIFIED="1679953241110" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/my_utils" />

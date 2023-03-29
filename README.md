@@ -62,6 +62,7 @@ Python 学习笔记
 """
   注释信息
 """
+
 3. 变量
 > 格式：
 > 
@@ -147,7 +148,7 @@ Python 学习笔记
 > 
 >  - 如果字符串本身包含单引号，则用双引号定义字符串，反之亦然；
 >  - 用转义字符 \ 解除字符串本身所含引号的作用 ``` name = " \"amy\" "```
-> 
+
 - 2. 字符串拼接
 
     1) 用 + ： print("name" + name )
@@ -328,7 +329,7 @@ Python 学习笔记
 > -  print('hello', end = ' ') 输出不换行
 > 
 > - \t 制表符：作用是对齐
-> 
+
 
 练习： while循环打印九九乘法表 【[CODE](A-basic/Practical/Practical2.py)】
 
@@ -338,7 +339,7 @@ Python 学习笔记
 > 
 >   for 临时变量 in 待处理数据集：
 > 循环满足条件时执行的代码
-> 
+
 ```python
 name = "amy"
 for x in name:
@@ -370,7 +371,7 @@ for x in name:
 > 例子：
 > 
 > range(5,10) 取出数据为：[5,6,7,8,9]
-> 
+
 
 > 语法3：
 > 
@@ -381,7 +382,7 @@ for x in name:
 > range(5,10,2)取出数据为：[5,7,9]
 
 > 练习： 统计偶数个数 【[CODE](A-basic/Practical/Practical4.py)】
-> 
+
 > 使用range()语句，获取从1到num（num是任意数）的序列，统计偶数的个数
 
 3. 变量作用域
@@ -441,6 +442,7 @@ sum1=sum(1,2)
 ```
 -None类型：
 如果函数没有使用return语句返回函数，函数也有返回值，返回了None这个字面量
+
 5. 函数说明文档
 * 格式： 通过多行注释对函数进行说明解释
 ```python
@@ -589,12 +591,14 @@ def func(x,y):
             元素 = 列表[index]
             对元素进行处理
             index +=1
+      ```
 
   - for循环遍历列表的元素
     - 格式：
     ```python
     for 临时变量 in 数据容器：
         对临时变量进行处理
+    ```
 * 练习：取出列表中的偶数 【[CODE](A-basic/Practical/Practical9.py)】
   - 遍历列表[1，2，3，4，5，6，7，8，9，10]，取出列表中的偶数，存入一个新列表中
   - 使用while循环和for循环各操作一次
@@ -711,7 +715,7 @@ def func(x,y):
 * 练习：升职加薪 【[CODE](A-basic/Practical/Practical14.py)】
   - 有如下员工信息，使用字典完成数据的记录。
   - 并通过for循环对所有级别为1的员工上任1级，薪水增加1000元
-  - 
+  
 | 姓名  | 部门  | 工资  | 级别  |
 |:---:|:----:|:-----:|:-----:|
 | 张三  |科技部 | 3000 |1 |
@@ -988,7 +992,7 @@ line.set_global_opts(
 )
 ```
 - 数据处理
-  -懒人工具 网站
+  - 懒人工具 网站
 ```python
 f_us = open("d://usa.txt","r",encoding = "utf-8")
 us_data = f_us.read()
