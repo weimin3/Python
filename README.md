@@ -940,7 +940,52 @@ file_util.print_file_info("d:/test_append.txt")
 file_util.append_to_file("d:/test_append.txt","今天不下雨")
 
 ```
+### 1.11 数据可视化 [补充学：]
+#### 1.11.1 折线图
+json 数据格式
+- 本质是带有特定格式的字符串
+- 负责不同编程语言中的数据传递和交互
+- 数据格式：```[{"name":"admin","age":18},{"name":"root","age":16},{"name":"zhangsan","age":20}]``` or ```{"name":"root","age":16}```
+- python 数据和json 数据的相互转化
+  - 导入json模块：import json
+  - 准备符合json格式的python数据
+  - 通过json.dumps(data)方法将python数据转化为json数据：json_str = json.dumps(data,ensure_ascii=false) ensure_ascii=false:解决中文显示问题
+  - 通过json.loads(data)方法将json数据转化为python数据
 
+pyecharts模块
+- 百度开发：gallery.pyechart.org 内有各种图标
+- 基础折线图
+  ```python
+  //导包
+  from pyecharts.charts import line
+  //创建对象
+  line = line()
+  //添加x轴坐标
+  line.add_xaxis(["中国","美国","日本"])
+  //添加y轴坐标
+  line.add_yaxis(gdp"",[30,20,10])
+  //生成图标
+  line.render()
+  ```
+- set_global_opts方法进行全局设置
+```python
+line.set_global_opts(
+  title_opts = titleopts("test", post_left ='center', pos_bottom = '1%'),
+  legend_opts = legendopts(is_show = True),
+  toolbox_opts = toolboxopts(is_show = True),
+  visualmap_opts = visualmapopts(is_show = True),
+  tooltip_opts = tooltipopts(is_show = True),
+)
+```
+- 数据处理
+  -懒人工具 网站
+```python
+f_us = open("d://usa.txt","r",encoding = "utf-8")
+us_data = f_us.read()
+us_dict = json.loads(us_data)
+//取key值
+trend = us_dict['data'][0]['trend']
+```
 
 ## 2. 高阶加强
 
